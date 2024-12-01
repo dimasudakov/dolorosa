@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package control;
+
+option go_package = "pkg/api/control;control";
+
+service OnlineControl {
+  rpc CheckSBP (CheckSBPRequest) returns (CheckSBPResponse) {}
+}
+
+message CheckSBPRequest {
+  // id операции
+  string operation_id = 1;
+  // uuid ФЛ
+  string client_id = 2;
+  // сумма перевода в копейках
+  int64 amount = 3;
+  // телефон отправителя, пример +79271020000
+  string sender_phone = 4;
+  // телефон получателя, пример +79271020000
+  string receiver_phone = 5;
+  // БИК банка получателя
+  optional string receiver_bic = 6;
+  // ФИО Получателя -  Наименование Получателя
+  optional string receiver_name = 7;
+}
+
+message CheckSBPResponse {
+  // решение
+  Decision decision = 1;
+  // причина отклонения
+  optional string decline_reason = 2;
+}
+
+enum Decision {
+  OK = 0;
+  NO = 1;
+}

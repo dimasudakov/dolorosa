@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package kafka;
+
+option go_package = "pkg/api/kafka;contracts";
+
+message DecisionLog {
+
+  string operation_id = 1;
+
+  string client_id = 2;
+
+  int64 amount = 3;
+
+  string trace_id = 4;
+
+  string decision = 6;
+
+  optional string decline_reason = 7;
+}

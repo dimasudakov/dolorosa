@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/migrations/clickhouse/1_logs.sql" dialect="ClickHouse" />
+    <file url="file://$PROJECT_DIR$/migrations/clickhouse/2_logs_queue.sql" dialect="ClickHouse" />
+    <file url="file://$PROJECT_DIR$/migrations/clickhouse/3_logs_mv.sql" dialect="ClickHouse" />
+  </component>
+</project>
